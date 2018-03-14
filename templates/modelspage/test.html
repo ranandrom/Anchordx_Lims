@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+ul{
+list-style: none;
+float: left;
+}
+li{
+display: none;
+}
+
+</style>
+<script type="text/javascript">
+function disp(){
+for(var i = 0; i<3; i++){
+document.getElementsByClassName('sss')[i].style.display='block';
+}
+
+}
+function out(){
+for(var i = 0; i<3; i++){
+document.getElementsByClassName('sss')[i].style.display='none';
+}
+}
+</script>
+</head>
+<body>
+<ul onmouseover="disp()" onmouseout="out()"> 手机数码
+<li class="sss">iPhone</li>
+<li class="sss">SAMSUNG</li>
+<li class="sss">SAMSUNG</li>
+</ul>
+</body>
+</html>
