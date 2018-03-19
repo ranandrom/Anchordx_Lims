@@ -607,6 +607,7 @@ def RandDSampleInfoInputToDataBase(request):
 
                 for i in range(0, len(sam_code_num)):
                     if sam_code_num[i].strip('\r') not in Sample_list:
+                        Sample_list.append(sam_code_num[i].strip('\r'))
                         if not sam_code_num[i].strip('\r') == '':
                             isAlreadyExisted = 1  # 是否存在重复样本编号标志
                             num_sam += 1

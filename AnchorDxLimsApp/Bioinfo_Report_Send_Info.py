@@ -104,7 +104,7 @@ def Bioinfo_Report_Send_InfoToDataBases(request):
 
     if button_name == 'download':
         print '报告文件名: ', Report_File_Name
-        filename = 'D:\\upload\\' + Report_File_Name  # 要下载的文件路径
+        filename = './upload/' + Report_File_Name  # 要下载的文件路径
         response = StreamingHttpResponse(ReadFile(filename))
         response['Content-Type'] = 'application/octet-stream'
         response['Content-Disposition'] = 'attachment;filename="{0}"'.format(Report_File_Name)
@@ -247,7 +247,7 @@ def download_file(Report_File_Name):
     print '报告文件名: ', Report_File_Name
     # the_file_name='11.png' #显示在弹出对话框中的默认的下载文件名  
     # filename='media/uploads/11.png' # 要下载的文件路径
-    filename='D:\\upload\\'+Report_File_Name  # 要下载的文件路径
+    filename='./upload/'+Report_File_Name  # 要下载的文件路径
     response=StreamingHttpResponse(ReadFile(filename))
     response['Content-Type']='application/octet-stream'
     response['Content-Disposition']='attachment;filename="{0}"'.format(Report_File_Name)

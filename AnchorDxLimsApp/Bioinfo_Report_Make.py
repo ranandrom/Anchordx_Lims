@@ -198,10 +198,10 @@ def Bioinfo_Report_InfoToDataBases(request):
                     myFile = request.FILES.get("myfile", None)  #  获取上传的文件，如果没有文件，则默认为None
                     if not myFile:
                         return HttpResponse("no files for upload!")
-                    if not os.path.exists('D:\\upload'):
-                        os.makedirs('D:\\upload')
+                    if not os.path.exists('./upload'):
+                        os.makedirs('./upload')
                     Report_File_Name = myFile.name
-                    destination = open(os.path.join("D:\\upload", myFile.name), 'wb+')  #  打开特定的文件进行二进制的写操作
+                    destination = open(os.path.join("./upload", myFile.name), 'wb+')  #  打开特定的文件进行二进制的写操作
                     if myFile.multiple_chunks() == False:
                         # 使用myFile.read()
                         for read in myFile.read():  # 整个上传  
@@ -276,7 +276,7 @@ def Bioinfo_Report_InfoToDataBases(request):
                 print '报告文件名: ', Report_File_Name
                 # the_file_name='11.png' #显示在弹出对话框中的默认的下载文件名  
                 # filename='media/uploads/11.png' # 要下载的文件路径
-                filename = 'D:\\upload\\' + Report_File_Name  # 要下载的文件路径
+                filename = './upload/' + Report_File_Name  # 要下载的文件路径
                 response = StreamingHttpResponse(ReadFile(filename))
                 response['Content-Type'] = 'application/octet-stream'
                 response['Content-Disposition'] = 'attachment;filename="{0}"'.format(Report_File_Name)
@@ -369,7 +369,7 @@ def download_file(request):
     print '报告文件名: ', Report_File_Name
     # the_file_name='11.png' #显示在弹出对话框中的默认的下载文件名  
     # filename='media/uploads/11.png' # 要下载的文件路径
-    filename='D:\\upload\\'+Report_File_Name  # 要下载的文件路径
+    filename='./upload/'+Report_File_Name  # 要下载的文件路径
     response=StreamingHttpResponse(ReadFile(filename))
     response['Content-Type']='application/octet-stream'
     response['Content-Disposition']='attachment;filename="{0}"'.format(Report_File_Name)
