@@ -75,7 +75,7 @@ def Bioinfo_Report_Info_Input (request):
 
         # 从数据里取出某条记录
         # temp_SystemMessage = models.UserSystemMessage.objects.filter(Receiver=username)  # 用户信息
-        temp_userlist = User.objects.filter(first_name='医学部')
+        temp_userlist = User.objects.filter(first_name='市场部')
         temp_SystemMessage_Unread = models.UserSystemMessage.objects.filter(Receiver=username,
                                                                             ReadingState='未读')  # 用户信息
         num_SystemMessage_Unread = len(temp_SystemMessage_Unread)
@@ -111,7 +111,7 @@ def Bioinfo_Report_Info_Again_Input (request):
 
         # 从数据里取出某条记录
         # temp_SystemMessage = models.UserSystemMessage.objects.filter(Receiver=username)  # 用户信息
-        temp_userlist = User.objects.filter(first_name='医学部')
+        temp_userlist = User.objects.filter(first_name='市场部')
         temp_SystemMessage_Unread = models.UserSystemMessage.objects.filter(Receiver=username,
                                                                             ReadingState='未读')  # 用户信息
         num_SystemMessage_Unread = len(temp_SystemMessage_Unread)
@@ -356,7 +356,7 @@ def Bioinfo_Report_ShowData (request):
                            "SystemMessage": temp_SystemMessage_Unread,
                            "num_SystemMessage_Unread": num_SystemMessage_Unread})
         elif button_name == 'ModifyData':
-            temp_userlist = User.objects.filter(first_name='医学部')
+            temp_userlist = User.objects.filter(first_name='市场部')
             return render(request, "modelspage/Bioinfo_Report_ModifyData.html",
                           {"data": temp_mysql, "userinfo": temp, "myInfo": temp_myInfo, "userlist": temp_userlist,
                            "SystemMessage": temp_SystemMessage_Unread,
