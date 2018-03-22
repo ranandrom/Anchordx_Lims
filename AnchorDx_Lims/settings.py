@@ -85,10 +85,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'anchordxlims',
+        'NAME': 'databaseName',
         #'NAME': 'lim_test',
-        'USER': 'zhirong_lu',
-        'PASSWORD': 'woshengri',
+        'USER': 'user',
+        'PASSWORD': 'password',
         #'HOST': '127.0.0.1',
         'HOST': 'localhost',
         # 'HOST': '192.192.0.132',
@@ -144,7 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 EMAIL_HOST = 'smtp.exmail.qq.com'  # smtp 地址（这里需要注意，如果你和我一样使用 163 邮箱的话，默认 smtp 功能是关闭的，需要去设置开启，并生成一个一次性密码用于连接 smtp 服务）
 EMAIL_PORT = 25   # SMTP端口
-EMAIL_HOST_USER = 'anchordxlims@anchordx.com'  # 用户
-EMAIL_HOST_PASSWORD = 'AD20151212abc'  # 密码
+EMAIL_HOST_USER = 'EmailHostUser'  # 用户
+EMAIL_HOST_PASSWORD = 'password'  # 密码
 EMAIL_SUBJECT_PREFIX = u'[AnchorDx Lims]'  # 为邮件Subject-line前缀,默认是'[django]'
 EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
